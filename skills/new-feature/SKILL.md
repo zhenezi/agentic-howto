@@ -34,6 +34,7 @@ Each task must be:
 - Mark each item `[x]` only after it's verified
 - Run type/compile check after each file change — catch errors early
 - For backend changes: check that the handler compiles and is registered before wiring up the frontend
+- For features with 3+ independent tasks (e.g., backend + frontend + tests), dispatch slices to subagents per `subagent-driven-development`.
 
 ## Phase 4: VERIFY — Prove it before marking done
 

@@ -26,10 +26,13 @@ When working in a project, detect the stack from config files and load the match
 - Decompose into vertical slices: each slice is independently testable and shippable
 
 ### 2. Subagent Strategy
-- Use subagents liberally to keep main context window clean
-- Offload research, exploration, and parallel analysis to subagents
-- For complex problems, throw more compute at it via subagents
-- One tack per subagent for focused execution
+- Use subagents to keep the main context window clean and focused
+- **When to dispatch**: research, exploration, parallel slice implementation, code review, test generation, refactoring isolated modules
+- **When NOT to dispatch**: tasks requiring multi-file coordination with shared state, tasks where you need to see incremental results before proceeding
+- **Context handoff**: every subagent prompt must include: (1) the specific deliverable, (2) relevant file paths, (3) stack reference to load, (4) acceptance criteria it must meet
+- **Review every result**: never merge subagent output without checking it against the acceptance criteria yourself. Trust but verify.
+- **One concern per subagent**: a subagent doing "implement feature X and write tests" will cut corners on tests. Split into two subagents.
+- For plans with 3+ independent slices, use the `subagent-driven-development` skill for structured dispatch and two-stage review.
 
 ### 3. Self-Improvement Loop
 - After ANY correction from the user: update `tasks/lessons.md` with the pattern
@@ -117,3 +120,4 @@ Skills live in `skills/<skill-name>/SKILL.md`. Each skill is technology-agnostic
 | `api-design` | Contract-first API design for any backend |
 | `code-review` | Structured code review checklist and process |
 | `writing-skills` | TDD-driven skill authoring: baseline → write → bulletproof |
+| `subagent-driven-development` | Structured subagent dispatch with two-stage review for parallel slices |

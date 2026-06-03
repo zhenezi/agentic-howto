@@ -25,6 +25,7 @@ This skill enforces a fast, repeatable session loop for one-person teams shippin
 - Build smallest user-visible slice first.
 - After each slice: run validation, then continue.
 - If stuck for 20+ minutes without a verifiable result → rescope smaller or stop and debug.
+- Subagent dispatch can compress a 90-minute execute phase to 30 minutes when slices are independent. See `subagent-driven-development`.
 
 ### 4. Verify Before Moving On (10 min)
 - Run type/compile check, test suite, and linter for your stack.

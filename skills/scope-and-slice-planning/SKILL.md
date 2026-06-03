@@ -33,6 +33,7 @@ Use this skill to turn large asks into small shippable slices.
 - Implement
 - Validate
 - Report delta before moving to the next slice
+- If 3+ slices are independent, consider dispatching via `subagent-driven-development` instead of sequential execution.
 
 ## Slice Quality Rules
 - A slice is too big if it cannot be verified in under 10 minutes.

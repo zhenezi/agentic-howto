@@ -29,6 +29,7 @@ A portable library of AI agent skills and workflows for solo developers and smal
 | [api-design](skills/api-design/SKILL.md) | Contract-first API design for any backend |
 | [code-review](skills/code-review/SKILL.md) | Structured code review checklist and process |
 | [writing-skills](skills/writing-skills/SKILL.md) | TDD-driven skill authoring: baseline → write → bulletproof |
+| [subagent-driven-development](skills/subagent-driven-development/SKILL.md) | Structured subagent dispatch with two-stage review for parallel slices |
 
 ## How to Use
 
